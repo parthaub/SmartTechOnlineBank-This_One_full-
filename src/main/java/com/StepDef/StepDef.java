@@ -80,4 +80,17 @@ public class StepDef {
         sa.assertAll();
         System.out.println("Check login status : " + Login_status);
     }
+        
+        
+        // -- Add your new parameterized steps --
+        @When("Enter {string} in username field")
+        public void enter_username_in_field (String username) {
+            driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys(username);
+        }
+
+        @When("Enter {string} in password field")
+        public void enter_password_in_field(String password) {
+            driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys(password);
+        
+    }
 }
